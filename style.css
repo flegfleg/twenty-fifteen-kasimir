@@ -1,0 +1,169 @@
+/*
+ Theme Name:   Twenty Fifteen KASIMIR
+ Theme URI:    http://example.com/twenty-fifteen-child/
+ Description:  Twenty Fifteen Child Theme
+ Author:       Florian Egermann
+ Author URI:   https://www.macht-medien.de
+ Template:     twentyfifteen
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  twentyfifteenkasimir
+*/
+
+/* General Cleanup */
+.hentry, .site-footer, .entry-footer, .comments-area {
+	background-color: transparent;
+	box-shadow: none;
+	border: none;
+}
+
+@media screen and (min-width: 38.75em) {
+	.hentry,
+	.page-header,
+	.page-content {
+		box-shadow: none;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.secondary {
+	margin: 0;
+	box-shadow: none;
+	border: none;
+}
+
+/* Colored sidebar slant */
+.sidebar {
+	overflow:hidden;
+	position:relative;
+	border: none;
+}
+
+.sidebar::before {
+	content:'';
+	position: absolute;
+	z-index: 3;
+	pointer-events: none;
+	background-repeat: no-repeat;
+	bottom: -0.1vw;
+	left: -0.1vw;
+	right: -0.1vw;
+	top: -0.1vw; 
+	background-size: 100% 26px;
+	background-position: 50% 100%; 
+	transform: rotateY(180deg); background-image: url('data:image/svg+xml;charset=utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 1" preserveAspectRatio="none"><path d="M0 0v1h10z" fill="%23ffffff"/></svg>'); 
+}
+
+@media screen and (min-width: 59.6875em) {
+	
+	.sidebar::before{ 
+		background-size: 26px 100%;
+		transform: rotateY(0deg);
+		background-position: 100% 50%;  background-image: url('data:image/svg+xml;charset=utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 8" preserveAspectRatio="none"><path d="M0 0h1v10z" fill="%23ffffff"/></svg>'); 
+	}
+}
+
+.site-branding {
+	rotate: -1.4deg;
+}
+
+.nav-menu,
+.main-navigation ul, 
+.main-navigation li {
+	border: 0;
+}
+
+/* Fonts */
+body,
+button,
+input,
+select,
+textarea {
+	font-family: "Rubik", sans-serif;
+	font-size: 15px;
+	font-size: 1.5rem;
+	line-height: 1.6;
+}
+
+.site-title,
+.site-description,
+.comments-title,
+.comment-reply-title {
+	font-family: "Rubik", sans-serif;
+}
+
+/* rubik-regular - latin */
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+	   url('assets/fonts/rubik-v14-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+	   url('assets/fonts/rubik-v14-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* rubik-800 - latin */
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 800;
+  src: local(''),
+	   url('assets/fonts/rubik-v14-latin-800.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+	   url('assets/fonts/rubik-v14-latin-800.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* rubik-italic - latin */
+@font-face {
+  font-family: 'Rubik';
+  font-style: italic;
+  font-weight: 400;
+  src: local(''),
+	   url('assets/fonts/rubik-v14-latin-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+	   url('assets/fonts/rubik-v14-latin-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* rubik-800italic - latin */
+@font-face {
+  font-family: 'Rubik';
+  font-style: italic;
+  font-weight: 800;
+  src: local(''),
+	   url('assets/fonts/rubik-v14-latin-800italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+	   url('assets/fonts/rubik-v14-latin-800italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* Site footer */
+.site-footer { /* same as .site-content */
+	margin-left: 29.4118%;
+	width: 70.5882%;
+	border: none;
+}
+
+.site-footer > div { /* same as .site-content > elements */
+	padding: 0 10%;
+}
+
+.widget-area-footer, 
+.widget-area-footer .widget{
+	padding: 0;
+}
+
+.widget-area-footer {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.widget-area-footer .widget {
+	width: 25%;
+	margin-bottom: 0;
+}
+
+.entry-header {
+	rotate: -1.4deg;
+	margin-left: -3%;
+}
+
+#sidebar {
+
+}
+
