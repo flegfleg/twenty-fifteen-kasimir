@@ -1,14 +1,14 @@
 /*
  Theme Name:   Twenty Fifteen KASIMIR
  Theme URI:    http://example.com/twenty-fifteen-child/
- Description:  Twenty Fifteen Child Theme
+ Description:  Twenty Fifteen Child Theme, optimized for CommonsBooking
  Author:       Florian Egermann
  Author URI:   https://www.macht-medien.de
  Template:     twentyfifteen
  Version:      1.0.0
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
- Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Tags:         two-columns, left-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-logo, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, block-patterns
  Text Domain:  twentyfifteenkasimir
 */
 
@@ -29,16 +29,12 @@
 	}
 }
 
+/* Sidebar  ------------------------------*/
+
 .secondary {
 	margin: 0;
 	box-shadow: none;
 	border: none;
-}
-
-/* Colored sidebar slant ------------------------------*/
-
-body {
-	background-color: #FFFFFF !important; /* custom background color setting is disabled */
 }
 
 .sidebar {
@@ -49,46 +45,37 @@ body {
 
 @media screen and (min-width: 59.6875em) {
 	.sidebar {
-		height: 100vh;
+		min-height: 100vh;
 	}
 }
 
-.sidebar::before {
-	content:'';
-	position: absolute;
-	z-index: 3;
-	pointer-events: none;
-	background-repeat: no-repeat;
-	bottom: -0.1vw;
-	left: -0.1vw;
-	right: -0.1vw;
-	top: -0.1vw; 
-	background-size: 100% 26px;
-	background-position: 50% 100%; 
-	transform: rotateY(180deg); 
-	background-image: url('data:image/svg+xml;charset=utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 1" preserveAspectRatio="none"><path d="M0 0v1h10z" fill="%23ffffff"/></svg>');  */
+.sidebar .widget-area .widget_commonsbooking-user-widget ul {
+	list-style: none;
+	margin: 0;
 }
 
-@media screen and (min-width: 59.6875em) {
-	.sidebar::before{ 
-		background-size: 26px 100%;
-		transform: rotateY(0deg);
-		background-position: 100% 50%;  
-		background-image: url('data:image/svg+xml;charset=utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 8" preserveAspectRatio="none"><path id="testing" d="M0 0h1v10z" fill="%23ffffff"/></svg>'); 
-		
-		/* mask-position: 0 10vh; */
-		/* background-color: green;
-		-webkit-mask-image: url('data:image/svg+xml;charset=utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 8" preserveAspectRatio="none"><path d="M0 0h1v10z"/></svg>'); 
-		mask-image: url('data:image/svg+xml;charset=utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 8" preserveAspectRatio="none"><path d="M0 0h1v10z" /></svg>'); */ 
-	}
+.sidebar .widget-area .widget_commonsbooking-user-widget ul li {
+	float: left;
+	margin: 2% 2% 2% 0;
+}
+
+/* copy of wp-block-button__link */
+.sidebar .widget-area .widget_commonsbooking-user-widget a { // border and text color is dynamically set in functions.php
+	cursor: pointer;
+	font-family: "Rubik", sans-serif;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 1.5;
+	padding: 0.7917em 1.5em;
+	text-transform: uppercase;
+	vertical-align: baseline;
+	border-radius: 9999px;
+	display: inline-block;
+	border: 0;
 }
 
 .site-branding {
 	rotate: -1.4deg;
-}
-
-#testing {
-	fíll: green !important;
 }
 
 .nav-menu,
@@ -112,7 +99,8 @@ textarea {
 .site-title,
 .site-description,
 .comments-title,
-.comment-reply-title {
+.comment-reply-title,
+.post-navigation a span.post-title {
 	font-family: "Rubik", sans-serif;
 }
 
@@ -153,12 +141,32 @@ textarea {
 	   url('assets/fonts/rubik-v14-latin-700italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
-/* Site footer ------------------------------*/
--.site-footer { 
+.entry-header {
+	rotate: -1.4deg;
+	text-align: center;
+}
+
+@media screen and (min-width: 59.6875em) {
+	.entry-header {
+		margin-left: -5%;
+		text-align: left;
+	}
+}
+
+.entry-footer {
+	padding-top: 0;
+}
+
+/* Site footer with widgets ------------------------------*/
+.site-footer { 
 	margin-left: 0;
 	margin-right: 0;
-	border: none;
 	padding: 0;
+	border: none;
+}
+
+.site-info {
+	margin-bottom: 10%;
 }
 
 @media screen and (min-width: 59.6875em) {
@@ -201,7 +209,26 @@ textarea {
 	}
 }
 
-.entry-header {
-	rotate: -1.4deg;
-	margin-left: -5%;
+/* Plugins: Polylang specific ------------------------------*/
+
+.widget.widget_polylang ul {
+	list-style: none;
+	display: block;
+}
+
+.widget.widget_polylang li {
+	display: inline-block;
+	margin-right: 4%;
+}
+
+
+/* Plugins: CB2 specific ------------------------------*/
+
+.cb-map-popup-item-link a {
+	border: none;
+}
+
+/* This can be deleted once https://github.com/wielebenwir/commonsbooking/pull/772 is in master  */
+table.cb-items-table {
+  table-layout: auto !important;   
 }
