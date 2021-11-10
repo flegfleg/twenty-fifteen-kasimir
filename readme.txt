@@ -20,10 +20,10 @@ Additions/Changes to the parent theme include:
 * Ships with local webfonts, not more calls to Google! 
 * Visual tweaks 
 * The theme also features custom styles for the following plugins:
-        * [CommonsBooking](https://wordpress.org/plugins/commonsbooking/) 
-        * [Polylang](https://de.wordpress.org/plugins/polylang/)
-        * [Complianz | GDPR/CCPA Cookie Consent](https://wordpress.org/plugins/complianz-gdpr/)
-        * [WP-Members](https://wordpress.org/plugins/wp-members/)
+    * [CommonsBooking](https://wordpress.org/plugins/commonsbooking/) 
+    * [Polylang](https://de.wordpress.org/plugins/polylang/)
+    * [Complianz | GDPR/CCPA Cookie Consent](https://wordpress.org/plugins/complianz-gdpr/)
+    * [WP-Members](https://wordpress.org/plugins/wp-members/)
 
 == Installation == 
 
